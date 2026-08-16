@@ -1,3 +1,4 @@
+import argparse
 import sys
 from Helper.InputData import InputData
 from Helper.FeaturePopulator import FeaturePopuplator
@@ -27,14 +28,16 @@ def populate(unpopulated_features):
                 
 
 if __name__ == "__main__":
-    input_file_path = "Neue-Heimstaden-Häuser-für-die-Karte.csv"
 
-    if len(sys.argv) == 2:
-        input_file_path = sys.argv[1]
+    parser = argparse.ArgumentParser(prog="uMapDataPreparator")
+    parser.add_argument("-i", "--input_file_path", default="Neue-Heimstaden-Häuser-für-die-Karte.csv", type=str)
+    parser.add_argument("-o", "--output_file_path", type=str)
+
+    args = parser.parse_args()
 
     try:
         # Feature data from csv
-        input_data_reader = InputData(input_file_path)
+        input_data_reader = InputData(args.input_file_path)
         features = input_data_reader.get_features_without_akelius()
 
         feature_populator = FeaturePopuplator(features)
@@ -49,6 +52,11 @@ if __name__ == "__main__":
 
         print("Feature Collection: ")
         print(feature_collection.toJSON())
+
+        if (args.output_file_path != None):
+            with open(args.output_file_path, "w", encoding="utf-8") as f:
+                f.write(feature_collection.toJSON())
+                
     except FileNotFoundError:
         print("Could not load file from location: " + input_file_path)
     except:

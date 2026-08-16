@@ -18,11 +18,13 @@ For exectuting the script run it via the following command:
 python3 ParseCSVToGeoJSON.py
 ```
 
-If you run the script without an additional parameter it expects to find a file called "Neue-Heimstaden-Häuser-für-die-Karte.csv" at the same location as the script.
+#### Parameters
 
-By executing the previous command with an additional paramter an other location for the expected file can be specified.
+##### InputFile
+You can specify an input file, which data shall be parsed by adding option -i when running the script.
+If you run the script without specifying the input file it expects to find a file called "Neue-Heimstaden-Häuser-für-die-Karte.csv" at the same location as the script.
 
-##### Neue-Heimstaden-Häuser-für-die-Karte.csv
+###### Neue-Heimstaden-Häuser-für-die-Karte.csv
 The previously mentioned file at this or another given location is expected to  be a .csv where the first row has the following structure:
 
 |name|Bezirk|Stadtteil|Milieuschutzgebiet|Objektnummer|Abgeschlossenheitsbescheinigung|Abwendungsvereinbarung|Kaufdatum|Vorbesitzer_in|Umwandlungserlaubnis|Wohnungseinheiten|Gewerbeeinheiten|Kaufdatum Akelius|Unterfirma|Notizen|Layer|
@@ -30,4 +32,5 @@ The previously mentioned file at this or another given location is expected to  
 
 For now only these rows will be processed, where the value of column Layer is "ohne Akelius"
 
-
+##### OutputFile
+You can also specify an OutputFile by using paramter -o. The parsed geoson data will be stored in this file. If you don not specify an output parameter the parsed data will only be printed to the terminal but not stored in a file.

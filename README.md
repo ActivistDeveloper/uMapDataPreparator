@@ -25,8 +25,8 @@ By executing the previous command with an additional paramter an other location 
 ##### Neue-Heimstaden-Häuser-für-die-Karte.csv
 The previously mentioned file at this or another given location is expected to  be a .csv where the first row has the following structure:
 
-|name|Bezirk|Stadtteil|Millieuschutzgebiet|Objektnummer|Abgeschlossenheitsbescheinigung|Abwendungsvereinbarung|Kaufdatum|Vorbesitzerin|Umwandlungserlaubnis|Wohnungen|Gewerbeeinheiten|Kaufdatum|Akelius|Unterfirma|Notizen|Layer|
-|----|------|---------|-------------------|------------|-------------------------------|----------------------|---------|-------------|--------------------|---------|----------------|---------|-------|----------|-------|-----| 
+|name|Bezirk|Stadtteil|Millieuschutzgebiet|Objektnummer|Abgeschlossenheitsbescheinigung|Abwendungsvereinbarung|Kaufdatum|Vorbesitzerin|Umwandlungserlaubnis|Wohnungen|Gewerbeeinheiten|Kaufdatum Akelius|Unterfirma|Notizen|Layer|
+|----|------|---------|-------------------|------------|-------------------------------|----------------------|---------|-------------|--------------------|---------|----------------|-----------------|----------|-------|-----| 
 
 For now only these rows will be processed, where the value of column Layer is "ohne Akelius"
 
